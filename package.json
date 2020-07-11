@@ -1,0 +1,56 @@
+{
+  "name": "web-workers-demo",
+  "version": "1.0.0",
+  "description": "demo for web-workers, react-grid-layout, recharts usage",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --watch",
+    "build": "webpack --config deploy.config.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svyatoslav00012/web-workers-demo.git"
+  },
+  "keywords": [
+    "web-workers",
+    "react-grid-layout",
+    "recharts",
+    "react",
+    "js"
+  ],
+  "author": "svyatoslav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svyatoslav00012/web-workers-demo/issues"
+  },
+  "homepage": "http://svyatoslav00012.github.io/web-workers-demo",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-throw-expressions": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-emotion": "^10.0.33",
+    "css-loader": "^3.6.0",
+    "gh-pages": "^3.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "worker-loader": "^2.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-grid-layout": "^0.18.3",
+    "recharts": "^1.8.5",
+    "uuid": "^8.2.0"
+  }
+}
