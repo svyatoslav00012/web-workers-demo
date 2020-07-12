@@ -1,18 +1,18 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path'),
     jsPath = './src',
-    distPath = './deploy/assets/ui/javascripts/',
+    distPath = './build',
     srcPath = path.join(__dirname, jsPath),
     outputPath = path.join(__dirname, distPath);
 
 module.exports = {
     optimization: {
-        minimize: false
+        minimize: true
     },
     output: {
         path: outputPath,
         filename: 'bundle.js',
-        publicPath: '/'
+        publicPath: '/web-workers-demo/'
     },
     entry: {
         test: [path.join(srcPath, '/index.js')],
@@ -34,12 +34,21 @@ module.exports = {
             },
             {
                 test: /\.worker\.js$/,
-                use: { loader: 'worker-loader' }
+                use: {
+                    loader: 'worker-loader',
+                }
             },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loaders: ['babel-loader']
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             },
         ]
     }
